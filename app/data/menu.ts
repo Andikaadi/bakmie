@@ -46,7 +46,7 @@ export const menus = [
     kategori: 'Bakmie',
     nama: 'Bakmie Kakap Saus Mangga',
     harga: 'Rp 15.000',
-    gambar: '/images/bakmie_jamurayam.png',
+    gambar: '/images/bakmie_kakap.png',
     deskripsi: 'Perpaduan ayam dan jamur yang nikmat.'
   },
 

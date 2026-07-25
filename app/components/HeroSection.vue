@@ -14,7 +14,7 @@
       <div>
 
         <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-semibold">
-          Sejak 1998
+          Resep turun-temurun
         </span>
 
         <h1 class="
