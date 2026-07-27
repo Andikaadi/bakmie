@@ -24,28 +24,28 @@ export const menus = [
   {
     kategori: 'Bakmie',
     nama: 'Bakmie Ayam Katsu',
-    harga: 'Rp 15.000',
+    harga: 'Rp 17.000',
     gambar: '/images/bakmie_ayamkatsu.png',
     deskripsi: 'Perpaduan ayam dan jamur yang nikmat.'
   },
   {
     kategori: 'Bakmie',
     nama: 'Bakmie Ayam BBQ',
-    harga: 'Rp 15.000',
+    harga: 'Rp 22.000',
     gambar: '/images/bakmie_ayambbq.png',
     deskripsi: 'Perpaduan ayam dan jamur yang nikmat.'
   },
   {
     kategori: 'Bakmie',
     nama: 'Bakmie Ubur-Ubur',
-    harga: 'Rp 15.000',
+    harga: 'Rp 25.000',
     gambar: '/images/bakmie_uburubur.png',
     deskripsi: 'Perpaduan ayam dan jamur yang nikmat.'
   },
   {
     kategori: 'Bakmie',
     nama: 'Bakmie Kakap Saus Mangga',
-    harga: 'Rp 15.000',
+    harga: 'Rp 22.000',
     gambar: '/images/bakmie_kakap.png',
     deskripsi: 'Perpaduan ayam dan jamur yang nikmat.'
   },
@@ -55,7 +55,7 @@ export const menus = [
     kategori: 'Nasi',
     nama: 'Nasi Ayam Katsu',
     harga: 'Rp 18.000',
-    gambar: '/images/menu/nasi-katsu.jpg',
+    gambar: '/images/nasi-ayamkatsu.png',
     deskripsi: 'Nasi hangat dengan ayam katsu renyah.'
   },
   {
