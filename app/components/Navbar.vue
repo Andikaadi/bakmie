@@ -6,7 +6,6 @@ const isOpen = ref(false)
 const menus = [
   { nama: 'Beranda', link: '/' },
   { nama: 'Menu', link: '/menu' },
-  { nama: 'Tentang', link: '/tentang' },
   { nama: 'Galeri', link: '/galeri' },
   { nama: 'Kontak', link: '/kontak' }
 ]
