@@ -1,63 +1,168 @@
 <script setup lang="ts">
 const menus = [
   {
-    nama: 'Bakmie Kampoeng',
-    harga: 'Rp18.000',
+    nama: 'Bakmie Jamur Ayam',
+    harga: 'Rp15.000',
     gambar: '/images/bakmie_jamurayam.png'
   },
   {
     nama: 'Bakmie Kobar',
-    harga: 'Rp22.000',
+    harga: 'Rp12.000',
     gambar: '/images/bakmie_kobar.png'
   },
   {
-    nama: 'Bakmie Jamur ayam',
-    harga: 'Rp25.000',
+    nama: 'Bakmie Ayam Katsu',
+    harga: 'Rp17.000',
     gambar: '/images/bakmie_ayamkatsu.png'
   }
 ]
 </script>
 
 <template>
-  <section class="py-24">
-    <div class="max-w-7xl mx-auto px-6">
+  <section class="py-14 md:py-24 bg-[#F8F5EC]">
 
-      <div class="text-center mb-14">
+    <div class="max-w-7xl mx-auto px-5 md:px-6">
 
-        <span class="text-green-700 font-semibold">
+      <!-- Heading -->
+
+      <div class="text-center mb-10 md:mb-14">
+
+        <span
+          class="
+            inline-block
+            bg-green-100
+            text-green-800
+            px-4
+            py-2
+            rounded-full
+            text-sm
+            font-semibold
+          "
+        >
           Menu Andalan
         </span>
 
-        <h2 class="text-5xl font-bold text-green-900 mt-4">
+        <h2
+          class="
+            mt-5
+            text-3xl
+            sm:text-4xl
+            md:text-5xl
+            font-bold
+            text-green-900
+          "
+        >
           Menu Favorit Pelanggan
         </h2>
 
-        <p class="mt-4 text-gray-600">
-          Cita rasa khas kampung dengan bahan pilihan terbaik.
+        <p
+          class="
+            mt-4
+            text-gray-600
+            max-w-xl
+            mx-auto
+          "
+        >
+          Cita rasa khas kampoeng dengan bahan pilihan terbaik.
         </p>
 
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <!-- Slider -->
+
+      <div
+        class="
+          flex
+          gap-5
+          overflow-x-auto
+          pb-3
+
+          snap-x
+          snap-mandatory
+        "
+      >
 
         <div
           v-for="menu in menus"
           :key="menu.nama"
-          class="bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-2 transition"
+          class="
+            min-w-[240px]
+            sm:min-w-[280px]
+            md:min-w-[320px]
+
+            bg-white
+
+            rounded-3xl
+
+            overflow-hidden
+
+            shadow-lg
+
+            hover:-translate-y-2
+            hover:shadow-xl
+
+            transition-all
+            duration-300
+
+            snap-start
+
+            flex-shrink-0
+          "
         >
-          <img
-            :src="menu.gambar"
-            :alt="menu.nama"
-            class="w-full h-64 object-contain bg-[#f8f5ec]"
-          >
 
-          <div class="p-6 text-center">
+          <!-- Foto -->
 
-            <h3 class="text-2xl font-bold text-green-900">
+          <div class="bg-[#F8F5EC] p-5">
+
+            <img
+              :src="menu.gambar"
+              :alt="menu.nama"
+              class="
+                w-full
+
+                aspect-square
+
+                object-contain
+              "
+            >
+
+          </div>
+
+          <!-- Isi -->
+
+          <div class="p-5 text-center">
+
+            <h3
+              class="
+                text-lg
+                md:text-2xl
+
+                font-bold
+
+                text-green-900
+              "
+            >
               {{ menu.nama }}
             </h3>
 
-            <p class="mt-2 text-yellow-600 font-bold">
+            <p
+              class="
+                mt-3
+
+                inline-block
+
+                bg-yellow-400
+
+                px-4
+                py-2
+
+                rounded-full
+
+                font-bold
+
+                text-green-900
+              "
+            >
               {{ menu.harga }}
             </p>
 
@@ -67,6 +172,56 @@ const menus = [
 
       </div>
 
+      <!-- Petunjuk Mobile -->
+
+      <div
+        class="
+          md:hidden
+
+          text-center
+
+          mt-5
+
+          text-sm
+
+          text-gray-500
+        "
+      >
+        ← Geser untuk melihat menu lainnya →
+      </div>
+
+      <!-- Tombol -->
+
+      <div class="text-center mt-10">
+
+        <NuxtLink
+          to="/menu"
+          class="
+            inline-flex
+            items-center
+            gap-2
+
+            bg-green-800
+            hover:bg-green-900
+
+            text-white
+
+            px-8
+            py-4
+
+            rounded-2xl
+
+            font-semibold
+
+            transition
+          "
+        >
+          🍜 Lihat Semua Menu
+        </NuxtLink>
+
+      </div>
+
     </div>
+
   </section>
 </template>

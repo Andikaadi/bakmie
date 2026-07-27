@@ -17,18 +17,25 @@ const menus = [
       sticky
       top-0
       z-50
-      bg-[#F8F5EC]/90
-      backdrop-blur-md
+      bg-[#F8F5EC]/95
+      backdrop-blur-lg
       border-b
       border-green-100
+      shadow-sm
     "
   >
+
     <div
       class="
         max-w-7xl
         mx-auto
-        px-5
-        h-20
+
+        px-4
+        md:px-6
+
+        h-16
+        md:h-20
+
         flex
         items-center
         justify-between
@@ -39,21 +46,34 @@ const menus = [
 
       <NuxtLink
         to="/"
-        class="flex items-center gap-3"
+        class="flex items-center gap-2 md:gap-3"
       >
 
         <img
           src="/images/logo.png"
-          class="w-12 h-12 object-contain"
+          alt="Bakmie Kampoeng"
+          class="
+            w-9
+            h-9
+
+            md:w-12
+            md:h-12
+
+            object-contain
+          "
         >
 
         <div>
 
           <h1
             class="
-              text-xl
+              text-base
+              md:text-xl
+
               font-bold
               text-green-900
+
+              leading-none
             "
           >
             Bakmie Kampoeng
@@ -61,6 +81,9 @@ const menus = [
 
           <p
             class="
+              hidden
+              md:block
+
               text-xs
               text-gray-500
             "
@@ -72,13 +95,15 @@ const menus = [
 
       </NuxtLink>
 
-      <!-- Desktop -->
+      <!-- Desktop Menu -->
 
       <nav
         class="
           hidden
           md:flex
+
           gap-8
+
           font-semibold
         "
       >
@@ -89,7 +114,9 @@ const menus = [
           :to="menu.link"
           class="
             text-green-900
+
             hover:text-yellow-600
+
             transition
           "
         >
@@ -98,40 +125,53 @@ const menus = [
 
       </nav>
 
-      <!-- Tombol -->
+      <!-- Desktop Button -->
 
       <NuxtLink
         to="/menu"
         class="
           hidden
           md:block
+
           bg-green-800
           hover:bg-green-900
+
           text-white
+
           px-6
           py-3
+
           rounded-full
+
           font-semibold
+
           transition
         "
       >
-        Pesan Sekarang
+        Lihat Menu
       </NuxtLink>
 
-      <!-- Mobile -->
+      <!-- Mobile Button -->
 
       <button
-        @click="isOpen=!isOpen"
+        @click="isOpen = !isOpen"
         class="
           md:hidden
+
+          p-2
+
+          rounded-xl
+
           text-green-900
+
+          hover:bg-green-100
         "
       >
 
         <svg
           v-if="!isOpen"
           xmlns="http://www.w3.org/2000/svg"
-          class="w-8 h-8"
+          class="w-7 h-7"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -147,7 +187,7 @@ const menus = [
         <svg
           v-else
           xmlns="http://www.w3.org/2000/svg"
-          class="w-8 h-8"
+          class="w-7 h-7"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -167,39 +207,75 @@ const menus = [
     <!-- Mobile Menu -->
 
     <transition
-      enter-active-class="duration-300"
-      leave-active-class="duration-200"
-      enter-from-class="opacity-0 -translate-y-5"
+      enter-active-class="duration-300 ease-out"
+      leave-active-class="duration-200 ease-in"
+      enter-from-class="opacity-0 -translate-y-3"
       enter-to-class="opacity-100 translate-y-0"
       leave-from-class="opacity-100 translate-y-0"
-      leave-to-class="opacity-0 -translate-y-5"
+      leave-to-class="opacity-0 -translate-y-3"
     >
 
       <div
         v-if="isOpen"
         class="
           md:hidden
+
           bg-white
+
           border-t
+
+          shadow-lg
         "
       >
 
-        <NuxtLink
-          v-for="menu in menus"
-          :key="menu.nama"
-          :to="menu.link"
-          @click="isOpen=false"
-          class="
-            block
-            px-6
-            py-4
-            border-b
-            hover:bg-green-50
-            text-green-900
-          "
-        >
-          {{ menu.nama }}
-        </NuxtLink>
+        <div class="p-4 space-y-2">
+
+          <NuxtLink
+            v-for="menu in menus"
+            :key="menu.nama"
+            :to="menu.link"
+            @click="isOpen = false"
+            class="
+              block
+
+              px-4
+              py-3
+
+              rounded-xl
+
+              text-green-900
+              font-medium
+
+              hover:bg-green-50
+            "
+          >
+            {{ menu.nama }}
+          </NuxtLink>
+
+          <NuxtLink
+            to="/menu"
+            @click="isOpen = false"
+            class="
+              mt-3
+
+              block
+
+              text-center
+
+              bg-green-800
+              text-white
+
+              py-3
+
+              rounded-xl
+
+              font-semibold
+            "
+          >
+            🍜 Lihat Menu
+          </NuxtLink>
+
+        </div>
 
       </div>
 

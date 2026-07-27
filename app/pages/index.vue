@@ -1,13 +1,17 @@
 <template>
-  <div>
+  <div class="bg-[#F8F5EC]">
 
     <Navbar />
 
-    <HeroSection />
+    <main>
 
-    <FeaturedMenu />
+      <HeroSection />
 
-    <FeatureSection />
+      <FeaturedMenu />
+
+      <FeatureSection />
+
+    </main>
 
     <Footer />
 
