@@ -26,28 +26,28 @@ export const menus = [
     nama: 'Bakmie Ayam Katsu',
     harga: 'Rp 17.000',
     gambar: '/images/bakmie_ayamkatsu.png',
-    deskripsi: 'Perpaduan ayam dan jamur yang nikmat.'
+    deskripsi: 'Perpaduan mie yang kenyal dan potongan ayam katsu yang renyah.'
   },
   {
     kategori: 'Bakmie',
     nama: 'Bakmie Ayam BBQ',
     harga: 'Rp 22.000',
     gambar: '/images/bakmie_ayambbq.png',
-    deskripsi: 'Perpaduan ayam dan jamur yang nikmat.'
+    deskripsi: 'Bakmie hangat dengan potongan ayam panggang dan saos teriyaki.'
   },
   {
     kategori: 'Bakmie',
     nama: 'Bakmie Ubur-Ubur',
     harga: 'Rp 25.000',
     gambar: '/images/bakmie_uburubur.png',
-    deskripsi: 'Perpaduan ayam dan jamur yang nikmat.'
+    deskripsi: 'Bakmie khas yang unik dengan toping ubur-ubur asli .'
   },
   {
     kategori: 'Bakmie',
     nama: 'Bakmie Kakap Saus Mangga',
     harga: 'Rp 22.000',
     gambar: '/images/bakmie_kakap.png',
-    deskripsi: 'Perpaduan ayam dan jamur yang nikmat.'
+    deskripsi: 'Bakmie dengan toping ikan kakap yang gurih dan saus mangga yang manis.'
   },
 
   // NASI
@@ -156,7 +156,7 @@ export const menus = [
 {
   kategori: 'Camilan',
   nama: 'Wonton Chili Oil',
-  harga: 'Rp 14.000',
+  harga: 'Rp 12.000',
   gambar: '/images/camilan/wonton_chili.png',
   deskripsi: 'Wonton lembut dengan saus chili oil pedas gurih.'
 },
@@ -184,14 +184,14 @@ export const menus = [
 {
   kategori: 'Camilan',
   nama: 'Otak-Otak Ikan',
-  harga: 'Rp 12.000',
+  harga: 'Rp 11.000',
   gambar: '/images/camilan/otak_otak.png',
   deskripsi: 'Otak-otak ikan bakar dengan aroma yang menggugah selera.'
 },
 {
   kategori: 'Camilan',
   nama: 'Pisang Roll Coklat',
-  harga: 'Rp 12.000',
+  harga: 'Rp 10.000',
   gambar: '/images/camilan/pisang.png',
   deskripsi: 'Pisang goreng crispy dengan topping coklat manis.'
 },
