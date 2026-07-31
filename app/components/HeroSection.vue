@@ -97,7 +97,7 @@
             leading-tight
           "
         >
-          Bakmie Kampoeng
+          Bakmie Kampoeng Pacet
         </h1>
 
         <p
