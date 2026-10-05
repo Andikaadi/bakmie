@@ -1,7 +1,10 @@
+```vue
 <script setup lang="ts">
 import { ref } from 'vue'
 
 const isOpen = ref(false)
+
+const route = useRoute()
 
 const menus = [
   { nama: 'Beranda', link: '/' },
@@ -9,6 +12,10 @@ const menus = [
   { nama: 'Galeri', link: '/galeri' },
   { nama: 'Kontak', link: '/kontak' }
 ]
+
+const isActive = (link: string) => {
+  return route.path === link
+}
 </script>
 
 <template>
@@ -24,7 +31,6 @@ const menus = [
       shadow-sm
     "
   >
-
     <div
       class="
         max-w-7xl
@@ -43,12 +49,10 @@ const menus = [
     >
 
       <!-- Logo -->
-
       <NuxtLink
         to="/"
         class="flex items-center gap-2 md:gap-3"
       >
-
         <img
           src="/images/logo.png"
           alt="Bakmie Kampoeng"
@@ -64,7 +68,6 @@ const menus = [
         >
 
         <div>
-
           <h1
             class="
               text-base
@@ -90,43 +93,47 @@ const menus = [
           >
             Authentic Noodle
           </p>
-
         </div>
-
       </NuxtLink>
 
-      <!-- Desktop Menu -->
 
+      <!-- Desktop Menu -->
       <nav
         class="
           hidden
           md:flex
 
-          gap-8
+          items-center
+          gap-2
 
           font-semibold
         "
       >
-
         <NuxtLink
           v-for="menu in menus"
           :key="menu.nama"
           :to="menu.link"
-          class="
-            text-green-900
+          :class="[
+            `
+              px-4
+              py-2
 
-            hover:text-yellow-600
+              rounded-full
 
-            transition
-          "
+              transition-all
+              duration-300
+            `,
+            isActive(menu.link)
+              ? 'bg-green-800 text-white shadow-sm'
+              : 'text-green-900 hover:bg-green-100 hover:text-green-800'
+          ]"
         >
           {{ menu.nama }}
         </NuxtLink>
-
       </nav>
 
-      <!-- Desktop Button -->
 
+      <!-- Desktop Button -->
       <NuxtLink
         to="/menu"
         class="
@@ -151,8 +158,8 @@ const menus = [
         Lihat Menu
       </NuxtLink>
 
-      <!-- Mobile Button -->
 
+      <!-- Mobile Button -->
       <button
         @click="isOpen = !isOpen"
         class="
@@ -165,9 +172,12 @@ const menus = [
           text-green-900
 
           hover:bg-green-100
-        "
-      >
 
+          transition
+        "
+        aria-label="Buka menu navigasi"
+      >
+        <!-- Hamburger -->
         <svg
           v-if="!isOpen"
           xmlns="http://www.w3.org/2000/svg"
@@ -184,6 +194,7 @@ const menus = [
           />
         </svg>
 
+        <!-- Close -->
         <svg
           v-else
           xmlns="http://www.w3.org/2000/svg"
@@ -199,13 +210,12 @@ const menus = [
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
-
       </button>
 
     </div>
 
-    <!-- Mobile Menu -->
 
+    <!-- Mobile Menu -->
     <transition
       enter-active-class="duration-300 ease-out"
       leave-active-class="duration-200 ease-in"
@@ -214,20 +224,19 @@ const menus = [
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 -translate-y-3"
     >
-
       <div
         v-if="isOpen"
         class="
           md:hidden
 
-          bg-white
+          bg-[#F8F5EC]
 
           border-t
+          border-green-100
 
           shadow-lg
         "
       >
-
         <div class="p-4 space-y-2">
 
           <NuxtLink
@@ -235,34 +244,43 @@ const menus = [
             :key="menu.nama"
             :to="menu.link"
             @click="isOpen = false"
-            class="
-              block
+            :class="[
+              `
+                block
 
-              px-4
-              py-3
+                px-4
+                py-3
 
-              rounded-xl
+                rounded-xl
 
-              text-green-900
-              font-medium
+                font-medium
 
-              hover:bg-green-50
-            "
+                transition-all
+                duration-300
+              `,
+              isActive(menu.link)
+                ? 'bg-green-800 text-white shadow-sm'
+                : 'text-green-900 hover:bg-green-100'
+            ]"
           >
             {{ menu.nama }}
           </NuxtLink>
 
+
+          <!-- Tombol Lihat Menu -->
           <NuxtLink
             to="/menu"
             @click="isOpen = false"
             class="
-              mt-3
+              mt-4
 
               block
 
               text-center
 
               bg-green-800
+              hover:bg-green-900
+
               text-white
 
               py-3
@@ -270,16 +288,17 @@ const menus = [
               rounded-xl
 
               font-semibold
+
+              transition
             "
           >
             🍜 Lihat Menu
           </NuxtLink>
 
         </div>
-
       </div>
-
     </transition>
 
   </header>
 </template>
+```
