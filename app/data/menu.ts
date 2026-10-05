@@ -111,13 +111,6 @@ export const menus = [
 },
 {
   kategori: 'Minuman',
-  nama: 'Es Kopi Susu',
-  harga: 'Rp 12.000',
-  gambar: '/images/minuman/es_kopsu.png',
-  deskripsi: 'Perpaduan kopi dan susu yang creamy.'
-},
-{
-  kategori: 'Minuman',
   nama: 'Es Taro',
   harga: 'Rp 8.000',
   gambar: '/images/minuman/taro.png',
@@ -143,6 +136,27 @@ export const menus = [
   harga: 'Rp 5.000',
   gambar: '/images/minuman/air_mineral.png',
   deskripsi: 'Air mineral yang menyegarkan.'
+},
+{
+  kategori: 'Minuman',
+  nama: 'Es Kopi Susu',
+  harga: 'Rp 12.000',
+  gambar: '/images/minuman/es_kopsu.png',
+  deskripsi: 'Perpaduan kopi dan susu yang creamy.'
+},
+{
+  kategori: 'Minuman',
+  nama: 'Es Kopi Susu Gula Aren',
+  harga: 'Rp 13.000',
+  gambar: '/images/minuman/gula_aren.png',
+  deskripsi: 'Perpaduan kopi dan susu yang creamy dan campuran gula aren yang manis dan legit.'
+},
+{
+  kategori: 'Minuman',
+  nama: 'Cappuccino',
+  harga: 'Rp 12.000',
+  gambar: '/images/minuman/cappucino.png',
+  deskripsi: 'Nikmati perpaduan kopi dan susu yang lembut dengan aroma menggoda.'
 },
 
 // CAMILAN
